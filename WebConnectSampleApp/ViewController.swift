@@ -53,6 +53,8 @@ class ViewController: UIViewController, Callback {
         
         WebConnect.get()
             .url(url: "offers")
+           // .header(header: ["Test": "Header"])
+           // .queryParam(queryParam: ["name":"Hello"])
 
             .callback(callback: self)
             .tag(tag: 1)
