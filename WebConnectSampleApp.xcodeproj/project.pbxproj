@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B56A7331FFBB62500EA3016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7321FFBB62500EA3016 /* AppDelegate.swift */; };
+		4B56A7351FFBB62500EA3016 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7341FFBB62500EA3016 /* ViewController.swift */; };
+		4B56A7381FFBB62500EA3016 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B56A7361FFBB62500EA3016 /* Main.storyboard */; };
+		4B56A73A1FFBB62500EA3016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B56A7391FFBB62500EA3016 /* Assets.xcassets */; };
+		4B56A73D1FFBB62500EA3016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B56A73B1FFBB62500EA3016 /* LaunchScreen.storyboard */; };
+		4B56A7461FFBB79800EA3016 /* WebConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7451FFBB79800EA3016 /* WebConnect.swift */; };
+		4B56A7481FFBB98100EA3016 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7471FFBB98100EA3016 /* Builder.swift */; };
+		4B5C0E6F1FFDF36F004D95D0 /* CallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */; };
+		4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E701FFE5489004D95D0 /* Model.swift */; };
+		4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D26A1FFCFC8B006AA79A /* WebParam.swift */; };
+		4BEF14171FFF422A0023E1A2 /* WebConnectConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */; };
+		7FBB9883427206D4A846A942 /* Pods_WebConnectSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B56A72F1FFBB62500EA3016 /* WebConnectSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebConnectSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B56A7321FFBB62500EA3016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B56A7341FFBB62500EA3016 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B56A7371FFBB62500EA3016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B56A7391FFBB62500EA3016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B56A73C1FFBB62500EA3016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B56A73E1FFBB62500EA3016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B56A7451FFBB79800EA3016 /* WebConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnect.swift; sourceTree = "<group>"; };
+		4B56A7471FFBB98100EA3016 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBack.swift; sourceTree = "<group>"; };
+		4B5C0E701FFE5489004D95D0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4B88D26A1FFCFC8B006AA79A /* WebParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebParam.swift; sourceTree = "<group>"; };
+		4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnectConfiguration.swift; sourceTree = "<group>"; };
+		94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebConnectSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94C99ECBADCA39909A782707 /* Pods-WebConnectSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebConnectSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebConnectSampleApp/Pods-WebConnectSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D3005EB5490ED66F2C270B82 /* Pods-WebConnectSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebConnectSampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebConnectSampleApp/Pods-WebConnectSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B56A72C1FFBB62500EA3016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FBB9883427206D4A846A942 /* Pods_WebConnectSampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22594066C80F30B146195C2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B56A7261FFBB62500EA3016 = {
+			isa = PBXGroup;
+			children = (
+				4B56A7311FFBB62500EA3016 /* WebConnectSampleApp */,
+				4B56A7301FFBB62500EA3016 /* Products */,
+				CE9412796093FC31D39BC6E3 /* Pods */,
+				22594066C80F30B146195C2D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4B56A7301FFBB62500EA3016 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B56A72F1FFBB62500EA3016 /* WebConnectSampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B56A7311FFBB62500EA3016 /* WebConnectSampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				4B56A7441FFBB74E00EA3016 /* WebConnect_Manager */,
+				4B56A7321FFBB62500EA3016 /* AppDelegate.swift */,
+				4B56A7341FFBB62500EA3016 /* ViewController.swift */,
+				4B56A7361FFBB62500EA3016 /* Main.storyboard */,
+				4B56A7391FFBB62500EA3016 /* Assets.xcassets */,
+				4B56A73B1FFBB62500EA3016 /* LaunchScreen.storyboard */,
+				4B56A73E1FFBB62500EA3016 /* Info.plist */,
+				4B5C0E701FFE5489004D95D0 /* Model.swift */,
+			);
+			path = WebConnectSampleApp;
+			sourceTree = "<group>";
+		};
+		4B56A7441FFBB74E00EA3016 /* WebConnect_Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4B56A7451FFBB79800EA3016 /* WebConnect.swift */,
+				4B56A7471FFBB98100EA3016 /* Builder.swift */,
+				4B88D26A1FFCFC8B006AA79A /* WebParam.swift */,
+				4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */,
+				4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */,
+			);
+			path = WebConnect_Manager;
+			sourceTree = "<group>";
+		};
+		CE9412796093FC31D39BC6E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94C99ECBADCA39909A782707 /* Pods-WebConnectSampleApp.debug.xcconfig */,
+				D3005EB5490ED66F2C270B82 /* Pods-WebConnectSampleApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B56A72E1FFBB62500EA3016 /* WebConnectSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B56A7411FFBB62500EA3016 /* Build configuration list for PBXNativeTarget "WebConnectSampleApp" */;
+			buildPhases = (
+				C01375194EE9C21E43F5A9C2 /* [CP] Check Pods Manifest.lock */,
+				4B56A72B1FFBB62500EA3016 /* Sources */,
+				4B56A72C1FFBB62500EA3016 /* Frameworks */,
+				4B56A72D1FFBB62500EA3016 /* Resources */,
+				6753E3C50D297D78BAE0A95A /* [CP] Embed Pods Frameworks */,
+				CB3BAFDBAFCDE3E2CEA211CA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebConnectSampleApp;
+			productName = WebConnectSampleApp;
+			productReference = 4B56A72F1FFBB62500EA3016 /* WebConnectSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B56A7271FFBB62500EA3016 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Noushad Shah";
+				TargetAttributes = {
+					4B56A72E1FFBB62500EA3016 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4B56A72A1FFBB62500EA3016 /* Build configuration list for PBXProject "WebConnectSampleApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4B56A7261FFBB62500EA3016;
+			productRefGroup = 4B56A7301FFBB62500EA3016 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B56A72E1FFBB62500EA3016 /* WebConnectSampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B56A72D1FFBB62500EA3016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B56A73D1FFBB62500EA3016 /* LaunchScreen.storyboard in Resources */,
+				4B56A73A1FFBB62500EA3016 /* Assets.xcassets in Resources */,
+				4B56A7381FFBB62500EA3016 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6753E3C50D297D78BAE0A95A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebConnectSampleApp/Pods-WebConnectSampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C01375194EE9C21E43F5A9C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB3BAFDBAFCDE3E2CEA211CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebConnectSampleApp/Pods-WebConnectSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B56A72B1FFBB62500EA3016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BEF14171FFF422A0023E1A2 /* WebConnectConfiguration.swift in Sources */,
+				4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */,
+				4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */,
+				4B56A7351FFBB62500EA3016 /* ViewController.swift in Sources */,
+				4B56A7331FFBB62500EA3016 /* AppDelegate.swift in Sources */,
+				4B56A7461FFBB79800EA3016 /* WebConnect.swift in Sources */,
+				4B56A7481FFBB98100EA3016 /* Builder.swift in Sources */,
+				4B5C0E6F1FFDF36F004D95D0 /* CallBack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4B56A7361FFBB62500EA3016 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B56A7371FFBB62500EA3016 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4B56A73B1FFBB62500EA3016 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B56A73C1FFBB62500EA3016 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B56A73F1FFBB62500EA3016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4B56A7401FFBB62500EA3016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B56A7421FFBB62500EA3016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94C99ECBADCA39909A782707 /* Pods-WebConnectSampleApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZUS96N65E;
+				INFOPLIST_FILE = WebConnectSampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Clickapps.WebConnectSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4B56A7431FFBB62500EA3016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3005EB5490ED66F2C270B82 /* Pods-WebConnectSampleApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZUS96N65E;
+				INFOPLIST_FILE = WebConnectSampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Clickapps.WebConnectSampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B56A72A1FFBB62500EA3016 /* Build configuration list for PBXProject "WebConnectSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B56A73F1FFBB62500EA3016 /* Debug */,
+				4B56A7401FFBB62500EA3016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B56A7411FFBB62500EA3016 /* Build configuration list for PBXNativeTarget "WebConnectSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B56A7421FFBB62500EA3016 /* Debug */,
+				4B56A7431FFBB62500EA3016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B56A7271FFBB62500EA3016 /* Project object */;
+}
