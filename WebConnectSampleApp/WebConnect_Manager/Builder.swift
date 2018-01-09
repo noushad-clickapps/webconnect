@@ -12,16 +12,16 @@ import Alamofire
 
 class Builder: NSObject {
     
-
-    class GetBuilder : NSObject{
     
-        private var param = WebParam()
-    required init(type:String) {
-      
-        param.type = type
-    }
+    class GetBuilder : NSObject{
         
-     func url(url:String) -> Self {
+        private var param = WebParam()
+        required init(type:String) {
+            
+            param.type = type
+        }
+        
+        func url(url:String) -> Self {
             param.url = url
             return self
         }
@@ -31,7 +31,7 @@ class Builder: NSObject {
             return self
         }
         
-     func header(header:Dictionary<String, String>) -> Self  {
+        func header(header:Dictionary<String, String>) -> Self  {
             param.header = header
             return self
         }
@@ -42,7 +42,7 @@ class Builder: NSObject {
         }
         
         func callback(callback: Callback) -> Self  {
-           param.callback = callback
+            param.callback = callback
             return self
         }
         func tag(tag: Int) -> Self  {
@@ -63,7 +63,7 @@ class Builder: NSObject {
         
         func connect()   {
             // implement almofire code here
-        
+            
             var connectTimeout = 0
             if param.connectTimeOut != 0 {
                 connectTimeout = param.connectTimeOut
@@ -90,7 +90,7 @@ class Builder: NSObject {
             if WebConnectConfiguration.debug  {
                 debugPrint(request)
             }
-               request.responseString { (response:DataResponse<String>) in
+            request.responseString { (response:DataResponse<String>) in
                 
                 switch(response.result) {
                 case .success(_):
@@ -103,9 +103,9 @@ class Builder: NSObject {
                             print(response.result.value! as Any)
                         }
                         self.param.callback?.onSuccess(response: response.result.value!, tag: self.param.tag)
-                     }
-                     break
-                 case .failure(_):
+                    }
+                    break
+                case .failure(_):
                     if WebConnectConfiguration.debug  {
                         print(response.result.error! as Any)
                     }
@@ -195,11 +195,11 @@ class Builder: NSObject {
             
             Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = TimeInterval(connectTimeout)
             
-           var method =  HTTPMethod.post
+            var method =  HTTPMethod.post
             
             if param.type == "POST" {
                 
-               method = HTTPMethod.post
+                method = HTTPMethod.post
             }
             else if param.type == "PUT" {
                 
@@ -260,6 +260,6 @@ class Builder: NSObject {
         }
         
     }
-
+    
 }
 

@@ -19,7 +19,7 @@ class ViewController: UIViewController, Callback {
         let decoder = JSONDecoder()
         
         switch(tag) {
-        
+            
         case 1:
             
             let modelData = try! decoder.decode(Model.self, from: jsonData)
@@ -33,7 +33,7 @@ class ViewController: UIViewController, Callback {
         default: break
             
         }
-       
+        
         
     }
     
@@ -53,9 +53,9 @@ class ViewController: UIViewController, Callback {
         
         WebConnect.get()
             .url(url: "offers")
-           // .header(header: ["Test": "Header"])
-           // .queryParam(queryParam: ["name":"Hello"])
-
+            // .header(header: ["Test": "Header"])
+            // .queryParam(queryParam: ["name":"Hello"])
+            
             .callback(callback: self)
             .tag(tag: 1)
             .loader(loader: loaderIndicator)
@@ -75,7 +75,7 @@ class ViewController: UIViewController, Callback {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
