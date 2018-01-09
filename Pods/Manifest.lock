@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.6.0)
+  - SWActivityIndicatorView (2.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - SWActivityIndicatorView
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  SWActivityIndicatorView: b3d43933021d3e3ba08a814b43751e3f58031e87
+
+PODFILE CHECKSUM: 59bc51993f032b89058cdda795a5ee1b715aae6e
+
+COCOAPODS: 1.2.1
