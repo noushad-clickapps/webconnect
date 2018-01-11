@@ -12,7 +12,6 @@ import Alamofire
 
 class Builder: NSObject {
     
-    
     class GetBuilder : NSObject{
         
         private var param = WebParam()
@@ -90,37 +89,10 @@ class Builder: NSObject {
             if WebConnectConfiguration.debug  {
                 debugPrint(request)
             }
-            request.responseString { (response:DataResponse<String>) in
-                
-                switch(response.result) {
-                case .success(_):
-                    if response.result.value != nil {
-                        if self.param.loader != nil && self.param.loader.isAnimating{
-                            self.param.loader.stopAnimating()
-                            self.param.loader.hidesWhenStopped = true
-                        }
-                        if WebConnectConfiguration.debug  {
-                            print(response.result.value! as Any)
-                        }
-                        self.param.callback?.onSuccess(response: response.result.value!, tag: self.param.tag)
-                    }
-                    break
-                case .failure(_):
-                    if WebConnectConfiguration.debug  {
-                        print(response.result.error! as Any)
-                    }
-                    if self.param.loader != nil && self.param.loader.isAnimating{
-                        self.param.loader.stopAnimating()
-                        self.param.loader.hidesWhenStopped = true
-                    }
-                    self.param.callback?.onError(error: response.result.error as! String, tag: self.param.tag)
-                    break
-                }
-            }
+          _ = RequestCallback.init(param: param, request: request) 
             
         }
     }
-    
     
     class PostBuilder : NSObject{
         
@@ -198,50 +170,21 @@ class Builder: NSObject {
             var method =  HTTPMethod.post
             
             if param.type == "POST" {
-                
                 method = HTTPMethod.post
             }
             else if param.type == "PUT" {
-                
                 method = HTTPMethod.put
             }
             else {
-                
                 method = HTTPMethod.delete
             }
+            
             let request = Alamofire.request(baseUrl+param.url, method: method, parameters: param.bodyParam, encoding: URLEncoding.default, headers: param.header)
             
             if WebConnectConfiguration.debug  {
                 debugPrint(request)
             }
-            request.responseString { (response:DataResponse<String>) in
-                
-                switch(response.result) {
-                case .success(_):
-                    if response.result.value != nil {
-                        if self.param.loader != nil && self.param.loader.isAnimating{
-                            self.param.loader.stopAnimating()
-                            self.param.loader.hidesWhenStopped = true
-                        }
-                        if WebConnectConfiguration.debug  {
-                            print(response.result.value! as Any)
-                        }
-                        self.param.callback?.onSuccess(response: response.result.value!, tag: self.param.tag)
-                    }
-                    break
-                case .failure(_):
-                    if WebConnectConfiguration.debug  {
-                        print(response.result.error! as Any)
-                    }
-                    if self.param.loader != nil && self.param.loader.isAnimating{
-                        self.param.loader.stopAnimating()
-                        self.param.loader.hidesWhenStopped = true
-                    }
-                    self.param.callback?.onError(error: response.result.error as! String, tag: self.param.tag)
-                    break
-                }
-            }
-            
+            _ = RequestCallback.init(param: param, request: request)
         }
     }
     
@@ -250,7 +193,6 @@ class Builder: NSObject {
         required init(type:String) {
             super.init(type: type)
         }
-        
     }
     
     class DeleteBuilder : PostBuilder{
@@ -258,8 +200,6 @@ class Builder: NSObject {
         required init(type:String) {
             super.init(type: type)
         }
-        
     }
-    
 }
 

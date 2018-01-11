@@ -11,9 +11,7 @@ import UIKit
 class WebConnect: NSObject {
     
    class func get() -> Builder.GetBuilder{
-    
-    return Builder.GetBuilder(type: "GET")
-   
+        return Builder.GetBuilder(type: "GET")
     }
     
     class func post() -> Builder.PostBuilder{

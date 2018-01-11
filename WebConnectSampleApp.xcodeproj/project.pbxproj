@@ -17,6 +17,7 @@
 		4B5C0E6F1FFDF36F004D95D0 /* CallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */; };
 		4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E701FFE5489004D95D0 /* Model.swift */; };
 		4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D26A1FFCFC8B006AA79A /* WebParam.swift */; };
+		4BE6BCC32005E444001B68EC /* RequestCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6BCC22005E444001B68EC /* RequestCallback.swift */; };
 		4BEF14171FFF422A0023E1A2 /* WebConnectConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */; };
 		7FBB9883427206D4A846A942 /* Pods_WebConnectSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBack.swift; sourceTree = "<group>"; };
 		4B5C0E701FFE5489004D95D0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4B88D26A1FFCFC8B006AA79A /* WebParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebParam.swift; sourceTree = "<group>"; };
+		4BE6BCC22005E444001B68EC /* RequestCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCallback.swift; sourceTree = "<group>"; };
 		4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnectConfiguration.swift; sourceTree = "<group>"; };
 		94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebConnectSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C99ECBADCA39909A782707 /* Pods-WebConnectSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebConnectSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebConnectSampleApp/Pods-WebConnectSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				4B88D26A1FFCFC8B006AA79A /* WebParam.swift */,
 				4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */,
 				4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */,
+				4BE6BCC22005E444001B68EC /* RequestCallback.swift */,
 			);
 			path = WebConnect_Manager;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE6BCC32005E444001B68EC /* RequestCallback.swift in Sources */,
 				4BEF14171FFF422A0023E1A2 /* WebConnectConfiguration.swift in Sources */,
 				4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */,
 				4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */,

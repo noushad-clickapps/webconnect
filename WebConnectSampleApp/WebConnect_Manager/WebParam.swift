@@ -19,9 +19,7 @@ class WebParam: NSObject {
     var tag = 0
     var connectTimeOut = 0
     var readTimeOut = 0
-    var loader = UIActivityIndicatorView()
+    var loader:UIActivityIndicatorView!
     var type = String()
-    
-    
     
 }

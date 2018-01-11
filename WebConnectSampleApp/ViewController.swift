@@ -14,7 +14,7 @@ class ViewController: UIViewController, Callback {
     
     func onSuccess(response: String, tag: Int) {
         
-        print("\(response) tag \(tag)")
+        print(" \(response)\n\n tag \(tag)")
         let jsonData = response.data(using: .utf8)!
         let decoder = JSONDecoder()
         
@@ -33,8 +33,6 @@ class ViewController: UIViewController, Callback {
         default: break
             
         }
-        
-        
     }
     
     func onError(error: String, tag: Int) {
@@ -55,7 +53,6 @@ class ViewController: UIViewController, Callback {
             .url(url: "offers")
             // .header(header: ["Test": "Header"])
             // .queryParam(queryParam: ["name":"Hello"])
-            
             .callback(callback: self)
             .tag(tag: 1)
             .loader(loader: loaderIndicator)
