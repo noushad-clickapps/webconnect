@@ -17,8 +17,8 @@ class WebParam: NSObject {
     var bodyParam = Dictionary<String, String>()
     var callback:Callback?
     var tag = 0
-    var connectTimeOut = 0
-    var readTimeOut = 0
+    var connectTimeOut = 60
+    var readTimeOut = 60
     var loader:UIActivityIndicatorView!
     var type = String()
     
