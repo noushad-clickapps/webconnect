@@ -68,5 +68,5 @@ WebConnect.post()
 `loader(loader: loaderIndicator)` - This is optional method, if you want to show loader during hit Api's than you can set your loader.
 
 ```
-Note - WebConnect.post() , WebConnect.put() ,WebConnect.delete() parameters will be the work same.
+Note - For these WebConnect.post() , WebConnect.put() ,WebConnect.delete() parameters will be same work.
 ```
