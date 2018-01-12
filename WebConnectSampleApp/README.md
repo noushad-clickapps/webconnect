@@ -1,5 +1,5 @@
 # webconnect
-This is configration for webconnect put this code on Appdelegate in didFinishLaunchingWithOptions method
+This is configration for webconnect put this code on *Appdelegate* in didFinishLaunchingWithOptions method
 ```
 WebConnectConfiguration()
     .baseUrl(baseUrl: "https://reqres.in/api/")
@@ -15,4 +15,5 @@ WebConnectConfiguration()
 `timeOut(connectTimeout: 20, readTimeout: 20)` - This is optional method using this you can set  connection timeout and read timeout for Api's otherwise bydefauld time out is 60 sec for both timeout.
 
 -----
+
 
