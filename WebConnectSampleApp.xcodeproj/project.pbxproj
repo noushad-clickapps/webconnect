@@ -34,6 +34,7 @@
 		4B56A7471FFBB98100EA3016 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBack.swift; sourceTree = "<group>"; };
 		4B5C0E701FFE5489004D95D0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4B5F07E92008738A0005C65B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4B88D26A1FFCFC8B006AA79A /* WebParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebParam.swift; sourceTree = "<group>"; };
 		4BE6BCC22005E444001B68EC /* RequestCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCallback.swift; sourceTree = "<group>"; };
 		4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnectConfiguration.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		4B56A7311FFBB62500EA3016 /* WebConnectSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				4B5F07E92008738A0005C65B /* README.md */,
 				4B56A7441FFBB74E00EA3016 /* WebConnect_Manager */,
 				4B56A7321FFBB62500EA3016 /* AppDelegate.swift */,
 				4B56A7341FFBB62500EA3016 /* ViewController.swift */,
