@@ -60,6 +60,7 @@ class ViewController: UIViewController, Callback {
         
         WebConnect.put() 
             .url(url: "users")
+            .header(header: ["Test": "Header"])
             .bodyParam(bodyParam: ["name":"Amit","job":"manager"])
             .tag(tag: 2)
             .loader(loader: loaderIndicator)
