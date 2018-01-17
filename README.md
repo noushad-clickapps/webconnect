@@ -17,7 +17,7 @@ WebConnectConfiguration()
 
 `debug(debug: true)` - This is optional method with `true/false`  you can check all the requested logs using this method `debugPrint`
 
-`timeOut(connectTimeout: 20, readTimeout: 20)` - This is optional method using this you can set  connection timeout and read timeout for Api's otherwise bydefauld time out is 60 sec for both timeout.
+`timeOut(connectTimeout: 20, readTimeout: 20)` - This is optional method using this you can set  connection timeout and read timeout for Api's otherwise by default time out is 60 sec for both timeout.
 
 -----
 
