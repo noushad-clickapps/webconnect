@@ -14,7 +14,6 @@
 		4B56A73D1FFBB62500EA3016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B56A73B1FFBB62500EA3016 /* LaunchScreen.storyboard */; };
 		4B56A7461FFBB79800EA3016 /* WebConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7451FFBB79800EA3016 /* WebConnect.swift */; };
 		4B56A7481FFBB98100EA3016 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7471FFBB98100EA3016 /* Builder.swift */; };
-		4B5C0E6F1FFDF36F004D95D0 /* CallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */; };
 		4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E701FFE5489004D95D0 /* Model.swift */; };
 		4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D26A1FFCFC8B006AA79A /* WebParam.swift */; };
 		4BE6BCC32005E444001B68EC /* RequestCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6BCC22005E444001B68EC /* RequestCallback.swift */; };
@@ -32,7 +31,6 @@
 		4B56A73E1FFBB62500EA3016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B56A7451FFBB79800EA3016 /* WebConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnect.swift; sourceTree = "<group>"; };
 		4B56A7471FFBB98100EA3016 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
-		4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBack.swift; sourceTree = "<group>"; };
 		4B5C0E701FFE5489004D95D0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4B5F07E92008738A0005C65B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
 		4B88D26A1FFCFC8B006AA79A /* WebParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebParam.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				4B56A7451FFBB79800EA3016 /* WebConnect.swift */,
 				4B56A7471FFBB98100EA3016 /* Builder.swift */,
 				4B88D26A1FFCFC8B006AA79A /* WebParam.swift */,
-				4B5C0E6E1FFDF36F004D95D0 /* CallBack.swift */,
 				4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */,
 				4BE6BCC22005E444001B68EC /* RequestCallback.swift */,
 			);
@@ -250,7 +247,6 @@
 				4B56A7331FFBB62500EA3016 /* AppDelegate.swift in Sources */,
 				4B56A7461FFBB79800EA3016 /* WebConnect.swift in Sources */,
 				4B56A7481FFBB98100EA3016 /* Builder.swift in Sources */,
-				4B5C0E6F1FFDF36F004D95D0 /* CallBack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,20 +20,32 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-49-vGw">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8JF-pj-RY3">
+                                <rect key="frame" x="123" y="53" width="130" height="119"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="UV6-xX-Mxl"/>
+                                    <constraint firstAttribute="height" constant="119" id="Xfe-li-TEP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8JF-pj-RY3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5gf-fL-YK3"/>
                             <constraint firstItem="HRm-49-vGw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="78Z-MR-P9c"/>
                             <constraint firstItem="HRm-49-vGw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M5N-zR-7y7"/>
+                            <constraint firstItem="8JF-pj-RY3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="Oln-y5-c8Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="downLoadImage" destination="8JF-pj-RY3" id="5jA-yX-q5y"/>
                         <outlet property="loaderIndicator" destination="HRm-49-vGw" id="KzS-Bx-NHG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>

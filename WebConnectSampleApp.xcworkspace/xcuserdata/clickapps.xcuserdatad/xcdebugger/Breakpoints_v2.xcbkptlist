@@ -10,44 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WebConnectSampleApp/ViewController.swift"
-            timestampString = "537861715.8920209"
+            timestampString = "538403825.164678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "onSuccess(response:tag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WebConnectSampleApp/WebConnect_Manager/Builder.swift"
-            timestampString = "537259388.84102"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "connect()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WebConnectSampleApp/WebConnect_Manager/Builder.swift"
-            timestampString = "537259388.841085"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "connect()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WebConnectSampleApp/ViewController.swift"
-            timestampString = "537861715.893204"
+            timestampString = "538403825.165251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "onSuccess(response:tag:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WebConnectSampleApp/ViewController.swift"
+            timestampString = "538403825.165687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "downLoadFile()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +58,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WebConnectSampleApp/ViewController.swift"
-            timestampString = "537861715.893472"
+            timestampString = "538403825.1660891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "downLoadFile()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WebConnectSampleApp/ViewController.swift"
+            timestampString = "538403825.166531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

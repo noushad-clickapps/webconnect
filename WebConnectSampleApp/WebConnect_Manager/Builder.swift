@@ -14,7 +14,7 @@ class Builder: NSObject {
     
     class GetBuilder : NSObject{
         
-        private var param = WebParam()
+        var param = WebParam()
         required init(type:String) {
             
             param.type = type
@@ -40,12 +40,8 @@ class Builder: NSObject {
             return self
         }
         
-        func callback(callback: Callback) -> Self  {
-            param.callback = callback
-            return self
-        }
-        func tag(tag: Int) -> Self  {
-            param.tag = tag
+        func callback(callBack:@escaping (Bool,_ responds:String?)-> Void) -> Self  {
+            param.callback = callBack
             return self
         }
         
@@ -89,7 +85,7 @@ class Builder: NSObject {
             if WebConnectConfiguration.debug  {
                 debugPrint(request)
             }
-          _ = RequestCallback.init(param: param, request: request) 
+            _ = RequestCallback.init(param: param, request: request)
             
         }
     }
@@ -117,12 +113,8 @@ class Builder: NSObject {
             return self
         }
         
-        func callback(callback: Callback) -> Self  {
-            param.callback = callback
-            return self
-        }
-        func tag(tag: Int) -> Self  {
-            param.tag = tag
+        func callback(callBack:@escaping (Bool,_ responds:String?)-> Void) -> Self  {
+            param.callback = callBack
             return self
         }
         
@@ -201,5 +193,115 @@ class Builder: NSObject {
             super.init(type: type)
         }
     }
+    
+    class DownloadBuilder : NSObject{
+        
+        var param = WebParam()
+        required init(type:String) {
+            param.type = type
+        }
+        
+        func url(url:String) -> Self {
+            param.url = url
+            return self
+        }
+        
+        func baseUrl(baseUrl:String) -> Self {
+            param.baseUrl = baseUrl
+            return self
+        }
+        
+        func header(header:Dictionary<String, String>) -> Self  {
+            param.header = header
+            return self
+        }
+        
+        func queryParam(queryParam:Dictionary<String, String>) -> Self  {
+            param.queryParam = queryParam
+            return self
+        }
+        
+        func callback(callBack:@escaping (Bool,_ responds:Any)-> Void) -> Self  {
+            param.downloadCallBack = callBack
+            return self
+        }
+        
+        func progress(progress:@escaping (_ progress:Double)-> Void) -> Self  {
+            param.progress = progress
+            return self
+        }
+        
+        func loader(loader: UIActivityIndicatorView) -> Self  {
+            param.loader = loader
+            return self
+        }
+        
+        func timeout(connectTimeout: Int, readTimeout : Int) -> Self  {
+            param.connectTimeOut = connectTimeout
+            param.readTimeOut = readTimeout
+            return self
+        }
+        func fileName(fileName:String) -> Self {
+            param.filePath = fileName
+            return self
+        }
+        
+        func connect() {
+            
+            var connectTimeout = 0
+            if param.connectTimeOut != 0 {
+                connectTimeout = param.connectTimeOut
+            }else {
+                connectTimeout = WebConnectConfiguration.connectTimeout
+            }
+            
+            var baseUrl = ""
+            if param.baseUrl != "" {
+                baseUrl = param.baseUrl
+            }else {
+                baseUrl = WebConnectConfiguration.baseUrl
+            }
+            
+            if param.loader != nil && !param.loader.isAnimating{
+                
+                param.loader.startAnimating()
+            }
+            
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let fileURL = documentsURL.appendingPathComponent(self.param.filePath)
+                
+                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+                
+            }
+            let request =
+                Alamofire.download(baseUrl+param.url, to: destination)
+            
+            if WebConnectConfiguration.debug {
+                
+                debugPrint(request)
+            }
+            request.downloadProgress { progress in
+                //print("Download Progress: \(progress.fractionCompleted)")
+                
+                self.param.progress?(progress.fractionCompleted)
+            }
+            
+            request.responseData { response in
+                if let data = response.result.value {
+                    self.param.downloadCallBack!(true,data)
+                }
+                else if let error = response.result.error {
+                    
+                    self.param.downloadCallBack!(false,error)
+                }
+            }
+            
+        }
+        
+        
+        
+    }
+    
 }
 

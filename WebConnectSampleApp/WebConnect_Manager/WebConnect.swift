@@ -25,4 +25,8 @@ class WebConnect: NSObject {
     class func delete() -> Builder.DeleteBuilder{
         return Builder.DeleteBuilder(type: "DELETE")
     }
+    
+    class func download() -> Builder.DownloadBuilder{
+        return Builder.DownloadBuilder(type: "GET")
+    }
 }

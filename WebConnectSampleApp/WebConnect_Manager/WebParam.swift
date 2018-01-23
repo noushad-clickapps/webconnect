@@ -15,11 +15,14 @@ class WebParam: NSObject {
     var header = Dictionary<String, String>()
     var queryParam = Dictionary<String, String>()
     var bodyParam = Dictionary<String, String>()
-    var callback:Callback?
-    var tag = 0
+    var callback:((Bool,_ response:String?)-> Void)?//Callback?
     var connectTimeOut = 60
     var readTimeOut = 60
     var loader:UIActivityIndicatorView!
     var type = String()
+    var filePath = String()
+    var downloadCallBack: ((Bool,_ response:Any)-> Void)?
+    var progress: ((_ progress:Double) -> Void)?
+    
     
 }
