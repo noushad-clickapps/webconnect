@@ -46,7 +46,7 @@ class ViewController: UIViewController {
                 
             })
             .loader(loader: loaderIndicator)
-           // .connect()
+          //  .connect()
         
         WebConnect.put() 
             .url(url: "users")
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 }
             })
             .loader(loader: loaderIndicator)
-            //.connect()
+          //  .connect()
         
         WebConnect.download()
             .url(url: "1024x1024-Wallpapers-010.jpg")
@@ -89,8 +89,42 @@ class ViewController: UIViewController {
                 print("Download Progress percentage = \(Int(progress * 100)) %")
                 
             })
-            .connect()
+            //.connect()
         
+        var params = [String:String]()
+        params["region_id"] = "3"
+        params["work_location_id"] = "4"
+        params["occasion_id"] = "3"
+        params["date"] = "26/01/2018"
+        params["address"] = "Chandigarh"
+        params["phone_number"] = "0512365478"
+        
+        let img = UIImage(named:"IMG_6169")
+        let data = UIImageJPEGRepresentation(img!, 0.5)
+        
+        var dataParams = [String:Data]()
+        dataParams["attachments_attributes[][attachment]\";filename=\"\("image1")"] =  data
+        //"attachments_attributes[][attachment]\";filename=\"\(uploadDict["file_name"]!)"
+        
+        
+        let headers = ["Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDEsImZpcnN0X25hbWUiOiJhc2hhbmFrLXZwbiIsImxhc3RfbmFtZSI6Ii0iLCJmdWxsX25hbWUiOiJBc2hhbmFrIFZwbiIsImFkbWluIjp0cnVlLCJyb2xlIjoiYWRtaW4iLCJhdmF0YXIiOiJodHRwOi8vYXBpLmRldi5tb2guY2xpY2tzYW5kYm94MS5jb206ODA4MC9kZWZhdWx0X3Byb2ZpbGUuanBnIiwiYWNjZXNzIjoiYXBwIiwiaWF0IjoxNTE2ODU5MDI3LCJleHAiOjE1MTk0NTEwMjd9.8WDVMThvcaVCIdmOTFCmXMK6mTATem90xgVfH-ZPMRg"]
+        
+        WebConnect.upload()
+            .url(url: "ashanaks")
+            .baseUrl(baseUrl: "http://api.dev.moh.clicksandbox1.com:8080/v1/")
+            .bodyParam(bodyParam: params )
+            .header(header: headers)
+            .dataParams(dataParams: dataParams)
+            .callback(callBack: { (status, response) in
+                
+                print("upload response", response)
+            })
+            .progress(progress: { (progress) in
+                
+                print("Download Progress percentage = \(Int(progress * 100)) %")
+
+            })
+            .connect()
     }
     
     func callSomeMethodWithParams(_ params: [AnyHashable: Any], onSuccess success: @escaping (_ JSON: Any) -> Void, onFailure failure: @escaping (_ error: Error?, _ params: [AnyHashable: Any]) -> Void) {

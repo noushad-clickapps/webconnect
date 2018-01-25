@@ -29,4 +29,8 @@ class WebConnect: NSObject {
     class func download() -> Builder.DownloadBuilder{
         return Builder.DownloadBuilder(type: "GET")
     }
+    
+    class func upload() -> Builder.UploadBuilder{
+        return Builder.UploadBuilder(type: "POST")
+    }
 }

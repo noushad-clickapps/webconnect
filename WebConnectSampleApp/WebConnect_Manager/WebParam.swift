@@ -23,6 +23,10 @@ class WebParam: NSObject {
     var filePath = String()
     var downloadCallBack: ((Bool,_ response:Any)-> Void)?
     var progress: ((_ progress:Double) -> Void)?
+   // var uploadMultipartCallBack: ((Bool,_ response:Any)-> Void)?
+    var uploadprogress: ((_ progress:Double) -> Void)?
+    var dataParams = Dictionary<String,Data>()
+    
     
     
 }
