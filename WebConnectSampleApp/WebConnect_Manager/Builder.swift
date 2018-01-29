@@ -275,6 +275,8 @@ class Builder: NSObject {
                 
             }
             
+            Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = TimeInterval(connectTimeout)
+            
             let request =
                 Alamofire.download(baseUrl+param.url, to: destination)
             
@@ -299,8 +301,6 @@ class Builder: NSObject {
             }
             
         }
-        
-        
         
     }
     
@@ -355,10 +355,6 @@ class Builder: NSObject {
             param.readTimeOut = readTimeout
             return self
         }
-        func fileName(fileName:String) -> Self {
-            param.filePath = fileName
-            return self
-        }
         
         func connect() {
             
@@ -382,18 +378,19 @@ class Builder: NSObject {
             }
             
             ////upload
+            Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = TimeInterval(connectTimeout)
             
             Alamofire.upload(
                 multipartFormData: { MultipartFormData in
-
+                    
                     for (key, value) in self.param.bodyParam {
                         MultipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
                     }
-
+                    
                     for (key, value) in self.param.dataParams {
                         MultipartFormData.append(value, withName: key)
                     }
-
+                    
             }, to: baseUrl + self.param.url,method: .post, headers : param.header) {
                 (result) in
                 
@@ -411,27 +408,17 @@ class Builder: NSObject {
                     })
                     _ = RequestCallback.init(param: self.param, request: request)
                     
-                case .failure(let error): break
+                case .failure(let error):
                     
+                    print(error)
                     
+                    break
+                  
                 }
             }
-            
-            
-            
-            
-            
-            
+          
         }
         
         
     }
 }
-
-extension NSMutableData {
-    func appendString(_ string: String) {
-        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
-        append(data!)
-    }
-}
-
