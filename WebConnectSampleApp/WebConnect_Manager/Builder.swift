@@ -167,6 +167,9 @@ class Builder: NSObject {
             else if param.type == "PUT" {
                 method = HTTPMethod.put
             }
+            else if param.type == "PATCH" {
+                method = HTTPMethod.patch
+            }
             else {
                 method = HTTPMethod.delete
             }
@@ -188,6 +191,13 @@ class Builder: NSObject {
     }
     
     class DeleteBuilder : PostBuilder{
+        
+        required init(type:String) {
+            super.init(type: type)
+        }
+    }
+    
+    class PatchBuilder : PostBuilder{
         
         required init(type:String) {
             super.init(type: type)
@@ -416,6 +426,22 @@ class Builder: NSObject {
                   
                 }
             }
+            
+            /// patch
+            /*
+            let enconding: ParameterEncoding = .Custom({convertible, params in
+            let mutableRequest = convertible.URLRequest.copy() as? NSMutableURLRequest
+            mutableRequest?.HTTPBody = "[{/"op/" : /"replace/", /"path/" : /"/IsVacinated/", /"value/":true"}]\".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+            if let mutableRequest = mutableRequest {
+                return (mutableRequest, nil)
+            }
+            let error = NSError(domain: "Custom", code: -1, userInfo: nil)
+            return (convertible.URLRequest, error)
+        })
+ */
+        
+        /// end patch
+            
           
         }
         

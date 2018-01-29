@@ -26,6 +26,10 @@ class WebConnect: NSObject {
         return Builder.DeleteBuilder(type: "DELETE")
     }
     
+    class func patch() -> Builder.PatchBuilder{
+        return Builder.PatchBuilder(type: "PATCH")
+    }
+    
     class func download() -> Builder.DownloadBuilder{
         return Builder.DownloadBuilder(type: "GET")
     }
