@@ -64,10 +64,26 @@ class ViewController: UIViewController {
             .loader(loader: loaderIndicator)
           //  .connect()
         
-        WebConnect.download()
+        WebConnect.patch()
+            .url(url: "users/2")
+            .bodyParam(bodyParam: ["name":"Amit","job":"manager"])
+            .callback { (status, response) in
+                
+                if status {
+                      print("Patch response", response as Any)
+                }
+                else {
+                    
+                }
+           
+        }
+        .loader(loader: loaderIndicator)
+        .connect()
+        
+        
+        WebConnect.download(fileName:"bigImage.png")
             .url(url: "1024x1024-Wallpapers-010.jpg")
             .baseUrl(baseUrl: "http://res.cloudinary.com/clickapps/image/upload/v1504245457/test/")
-            .fileName(fileName:"bigImage.png")
             .callback(callBack: { (status, data) in
                 
                 if status {

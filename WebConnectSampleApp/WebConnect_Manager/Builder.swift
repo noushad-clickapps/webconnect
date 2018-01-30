@@ -14,7 +14,7 @@ class Builder: NSObject {
     
     class GetBuilder : NSObject{
         
-        var param = WebParam()
+      
         required init(type:String) {
             
             param.type = type
@@ -207,8 +207,9 @@ class Builder: NSObject {
     class DownloadBuilder : NSObject{
         
         var param = WebParam()
-        required init(type:String) {
+        required init(type:String, fileName: String) {
             param.type = type
+            param.filePath  = fileName
         }
         
         func url(url:String) -> Self {
@@ -251,10 +252,7 @@ class Builder: NSObject {
             param.readTimeOut = readTimeout
             return self
         }
-        func fileName(fileName:String) -> Self {
-            param.filePath = fileName
-            return self
-        }
+        
         
         func connect() {
             
@@ -426,22 +424,6 @@ class Builder: NSObject {
                   
                 }
             }
-            
-            /// patch
-            /*
-            let enconding: ParameterEncoding = .Custom({convertible, params in
-            let mutableRequest = convertible.URLRequest.copy() as? NSMutableURLRequest
-            mutableRequest?.HTTPBody = "[{/"op/" : /"replace/", /"path/" : /"/IsVacinated/", /"value/":true"}]\".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-            if let mutableRequest = mutableRequest {
-                return (mutableRequest, nil)
-            }
-            let error = NSError(domain: "Custom", code: -1, userInfo: nil)
-            return (convertible.URLRequest, error)
-        })
- */
-        
-        /// end patch
-            
           
         }
         
