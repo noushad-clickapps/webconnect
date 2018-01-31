@@ -14,7 +14,7 @@ class Builder: NSObject {
     
     class GetBuilder : NSObject{
         
-      
+        var param = WebParam()
         required init(type:String) {
             
             param.type = type

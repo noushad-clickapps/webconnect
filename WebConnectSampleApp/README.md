@@ -185,7 +185,27 @@ print("Download Progress percentage = \(Int(progress * 100)) %")
 
 `loader(loader: loaderIndicator)` - Optional, if you want to show loader during hit Api's than you can set your loader.
 
+**HTTP UPLOAD MULTIPART**
+
+```
+WebConnect.upload()
+.url(url: "put your url")
+.baseUrl(baseUrl: "http://api.dev")
+.bodyParam(bodyParam: params )
+.header(header: headers)
+.dataParams(dataParams: dataParams)
+.callback(callBack: { (status, response) in
+
+print("upload response", response)
+})
+.progress(progress: { (progress) in
+
+print("Download Progress percentage = \(Int(progress * 100)) %")
+
+})
+.connect()
+```
+
 **Upcoming Features**
 1. HTTP HEAD
-2. Upload Multipart
 

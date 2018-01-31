@@ -1,6 +1,4 @@
 # webconnect
------
-
 **WebConnectConfiguration**
 
 Use below code on `Appdelegate` in `didFinishLaunchingWithOptions`
@@ -28,8 +26,21 @@ WebConnect.get()
 .url(url: "offers")
 .header(header: ["Test": "Header"])
 .queryParam(queryParam: ["name":"Hello"])
-.callback(callback: self)
-.tag(tag: 1)
+.callback(callBack: { (status, response) in
+
+if status {
+print("Get response", response as Any)
+
+let jsonData = response?.data(using: .utf8)!
+let decoder = JSONDecoder()
+let modelData = try! decoder.decode(Model.self, from: jsonData!)
+print("page = \(modelData.page)")
+}
+else {
+
+}
+
+})
 .loader(loader: loaderIndicator)
 .connect()
 ```
@@ -42,10 +53,7 @@ WebConnect.get()
 
 `queryParam(queryParam: ["name":"Hello"])` - Optional method, you can put your `query parameters` as `dictionary`. `By default = nil`
 
-`callback(callback: self)` - Optional, call back method use these two protocol `func onSuccess(response: String, tag: Int)` and `func onError(error: String, tag: Int)` in your viewControllers to get your response. `tag` defines which API response you are getting.
-`By default = nil`
-
-`tag(tag: 1)` - Optional, using this you can get this tag value on call back methods , if you are hitting multiple Api's at a same time than you can set tag for each Api's. `By default = 0`
+`callback(callBack: { (status, response) in })` - Optional, Using this you can get response within this method. Like above example.
 
 `loader(loader: loaderIndicator)` - Optional, if you want to show loader during hit Api's than you can set your loader.
 
@@ -57,9 +65,16 @@ WebConnect.post()
 .url(url: "users")
 .header(header: ["Test": "Header"])
 .bodyParam(bodyParam: ["name":"Amit","job":"manager"])
-.tag(tag: 2)
+callback(callBack: { (status, response) in
+
+if status {
+//  print("Post response", response as Any)
+}
+else {
+
+}
+})
 .loader(loader: loaderIndicator)
-.callback(callback: self)
 .connect()
 ```
 **HTTP PUT**
@@ -68,20 +83,54 @@ WebConnect.put()
 .url(url: "users")
 .header(header: ["Test": "Header"])
 .bodyParam(bodyParam: ["name":"Amit","job":"manager"])
-.tag(tag: 2)
+callback(callBack: { (status, response) in
+
+if status {
+//  print("Put response", response as Any)
+}
+else {
+
+}
+})
 .loader(loader: loaderIndicator)
-.callback(callback: self)
 .connect()
 ```
+**HTTP PATCH**
+```
+WebConnect.patch()
+.url(url: "users/2")
+.bodyParam(bodyParam: ["name":"Amit","job":"manager"])
+.callback { (status, response) in
+
+if status {
+print("Patch response", response as Any)
+}
+else {
+
+}
+
+}
+.loader(loader: loaderIndicator)
+.connect()
+
+```
+
 **HTTP DELETE**
 ```
 WebConnect.delete()
 .url(url: "users")
 .header(header: ["Test": "Header"])
 .bodyParam(bodyParam: ["name":"Amit","job":"manager"])
-.tag(tag: 2)
 .loader(loader: loaderIndicator)
-.callback(callback: self)
+callback(callBack: { (status, response) in
+
+if status {
+//  print("Delete response", response as Any)
+}
+else {
+
+}
+})
 .connect()
 ```
 
@@ -93,17 +142,70 @@ WebConnect.delete()
 
 `bodyParam(bodyParam: ["name":"Amit","job":"manager"])` - Optional method, you can put your body parameters as `dictionary` . `By default = nil`
 
-`callback(callback: self)` - Optional, call back method use these two protocol `func onSuccess(response: String, tag: Int)` and `func onError(error: String, tag: Int)` in your viewControllers to get your response. `tag` defines which API response you are getting.
-`By default = nil`
-
-`tag(tag: 1)` - Optional, using this you can get this tag value on call back methods , if you are hitting multiple Api's at a same time than you can set tag for each Api's. `By default = 0`
+`callback(callBack: { (status, response) in })` - Optional, Using this you can get response within this method. Like above example.
 
 `loader(loader: loaderIndicator)` - Optional, if you want to show loader during hit Api's than you can set your loader.
 
-**Upcoming Features**
-1. HTTP PATCH
-2. HTTP HEAD
-3. Download File
-4. Upload Multipart
+----
 
+**HTTP DOWNLOAD**
+
+```
+WebConnect.download(fileName:"bigImage.png")
+.url(url: "1024x1024-Wallpapers-010.jpg")
+.baseUrl(baseUrl: "http://res.cloudinary.com/clickapps/image/upload/v1504245457/test/")
+.callback(callBack: { (status, data) in
+
+if status {
+
+let image = UIImage(data: data as! Data)
+
+self.downLoadImage.image = image
+//print("image",image)
+}
+else {
+
+print("downloading failed")
+print("downloading failed \(data)")
+}
+
+})
+.progress(progress: { (progress) in
+
+print("Download Progress percentage = \(Int(progress * 100)) %")
+
+})
+//.connect()
+```
+`url(url: "offers")` - This is required url for the Api's apart from your baseUrl
+
+`baseUrl(baseUrl: "...")` - Optional if any specific API requires different baseUrl. `By default = that you provided in configuration`
+
+`callback(callBack: { (status, response) in })` - Optional, Using this you can get response within this method. Like above example.
+
+`loader(loader: loaderIndicator)` - Optional, if you want to show loader during hit Api's than you can set your loader.
+
+**HTTP UPLOAD MULTIPART**
+
+```
+WebConnect.upload()
+.url(url: "put your url")
+.baseUrl(baseUrl: "http://api.dev")
+.bodyParam(bodyParam: params )
+.header(header: headers)
+.dataParams(dataParams: dataParams)
+.callback(callBack: { (status, response) in
+
+print("upload response", response)
+})
+.progress(progress: { (progress) in
+
+print("Download Progress percentage = \(Int(progress * 100)) %")
+
+})
+.connect()
+```
+
+**Upcoming Features**
+1. HTTP HEAD
 
