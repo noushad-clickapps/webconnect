@@ -10,9 +10,9 @@ import UIKit
 
 enum MultipartKeys: String {
    case Data =  "data"
-   case keys = "keys"
-   case fileName = "fileName"
-   case mimeType = "mimeType"
+   case Keys = "keys"
+   case FileName = "fileName"
+   case MimeType = "mimeType"
 }
 
 class WebParam: NSObject {

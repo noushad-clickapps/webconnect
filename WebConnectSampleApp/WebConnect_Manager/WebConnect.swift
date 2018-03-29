@@ -36,7 +36,11 @@ class WebConnect: NSObject {
        return Builder.DownloadBuilder(type: "GET", fileName: fileName)
     }
     
-    class func upload() -> Builder.UploadBuilder{
+    class func uploadPost() -> Builder.UploadBuilder{
         return Builder.UploadBuilder(type: "POST")
+    }
+    
+    class func uploadPut() -> Builder.UploadBuilder{
+        return Builder.UploadBuilder(type: "PUT")
     }
 }
