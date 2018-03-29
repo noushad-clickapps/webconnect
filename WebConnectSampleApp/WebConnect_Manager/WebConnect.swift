@@ -10,7 +10,9 @@ import UIKit
 
 class WebConnect: NSObject {
     
+
    class func get() -> Builder.GetBuilder{
+    
         return Builder.GetBuilder(type: "GET")
     }
     
@@ -26,8 +28,12 @@ class WebConnect: NSObject {
         return Builder.DeleteBuilder(type: "DELETE")
     }
     
-    class func download() -> Builder.DownloadBuilder{
-        return Builder.DownloadBuilder(type: "GET")
+    class func patch() -> Builder.PatchBuilder{
+        return Builder.PatchBuilder(type: "PATCH")
+    }
+    
+    class func download(fileName :String) -> Builder.DownloadBuilder{
+       return Builder.DownloadBuilder(type: "GET", fileName: fileName)
     }
     
     class func upload() -> Builder.UploadBuilder{

@@ -167,6 +167,9 @@ class Builder: NSObject {
             else if param.type == "PUT" {
                 method = HTTPMethod.put
             }
+            else if param.type == "PATCH" {
+                method = HTTPMethod.patch
+            }
             else {
                 method = HTTPMethod.delete
             }
@@ -194,11 +197,19 @@ class Builder: NSObject {
         }
     }
     
+    class PatchBuilder : PostBuilder{
+        
+        required init(type:String) {
+            super.init(type: type)
+        }
+    }
+    
     class DownloadBuilder : NSObject{
         
         var param = WebParam()
-        required init(type:String) {
+        required init(type:String, fileName: String) {
             param.type = type
+            param.filePath  = fileName
         }
         
         func url(url:String) -> Self {
@@ -241,10 +252,7 @@ class Builder: NSObject {
             param.readTimeOut = readTimeout
             return self
         }
-        func fileName(fileName:String) -> Self {
-            param.filePath = fileName
-            return self
-        }
+        
         
         func connect() {
             
@@ -272,8 +280,9 @@ class Builder: NSObject {
                 let fileURL = documentsURL.appendingPathComponent(self.param.filePath)
                 
                 return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-                
             }
+            
+            Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = TimeInterval(connectTimeout)
             
             let request =
                 Alamofire.download(baseUrl+param.url, to: destination)
@@ -283,8 +292,6 @@ class Builder: NSObject {
                 debugPrint(request)
             }
             request.downloadProgress { progress in
-                //print("Download Progress: \(progress.fractionCompleted)")
-                
                 self.param.progress?(progress.fractionCompleted)
             }
             
@@ -299,8 +306,6 @@ class Builder: NSObject {
             }
             
         }
-        
-        
         
     }
     
@@ -340,7 +345,13 @@ class Builder: NSObject {
             param.uploadprogress = progress
             return self
         }
-        func dataParams(dataParams:Dictionary<String,Data>) -> Self {
+        
+        /**
+         dictImage["dataKey"] -> key provided by API parameter
+         dictImage["mimeType"] -> Here will add mimeType for selected data eg (image/jpg , image/png, application/pdf and so on)
+         dictImage["fileName"] -> Name of data file eg (xyz)
+         **/
+        func dataParams(dataParams:[AnyObject]) -> Self {
             param.dataParams = dataParams
             return self
         }
@@ -353,10 +364,6 @@ class Builder: NSObject {
         func timeout(connectTimeout: Int, readTimeout : Int) -> Self  {
             param.connectTimeOut = connectTimeout
             param.readTimeOut = readTimeout
-            return self
-        }
-        func fileName(fileName:String) -> Self {
-            param.filePath = fileName
             return self
         }
         
@@ -382,19 +389,24 @@ class Builder: NSObject {
             }
             
             ////upload
+            Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = TimeInterval(connectTimeout)
             
             Alamofire.upload(
                 multipartFormData: { MultipartFormData in
-
+                    
                     for (key, value) in self.param.bodyParam {
                         MultipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
                     }
+                    
+                    for dict in self.param.dataParams {
+                        
+                        let uploadDict = dict as! [String:AnyObject]
+                        
+                        MultipartFormData.append((uploadDict[MultipartKeys.Data.rawValue] as? Data)!, withName: uploadDict[MultipartKeys.keys.rawValue] as! String, fileName: uploadDict[MultipartKeys.fileName.rawValue] as! String, mimeType: uploadDict[MultipartKeys.mimeType.rawValue] as! String)
 
-                    for (key, value) in self.param.dataParams {
-                        MultipartFormData.append(value, withName: key)
                     }
-
-            }, to: baseUrl + self.param.url,method: .post, headers : param.header) {
+                    
+            }, to: baseUrl + self.param.url,method: .put, headers : param.header) {
                 (result) in
                 
                 switch result {
@@ -411,27 +423,17 @@ class Builder: NSObject {
                     })
                     _ = RequestCallback.init(param: self.param, request: request)
                     
-                case .failure(let error): break
+                case .failure(let error):
                     
+                    print(error)
                     
+                    break
+                  
                 }
             }
-            
-            
-            
-            
-            
-            
+          
         }
         
         
     }
 }
-
-extension NSMutableData {
-    func appendString(_ string: String) {
-        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
-        append(data!)
-    }
-}
-

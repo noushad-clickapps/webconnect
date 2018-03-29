@@ -25,7 +25,6 @@ class RequestCallback: NSObject {
                     if WebConnectConfiguration.debug  {
                         print(response.result.value! as Any)
                     }
-                  //  param.callback?.onSuccess(response: response.result.value!, tag: param.tag)
                     param.callback!(true,response.result.value!)
                 }
                 break
@@ -37,7 +36,6 @@ class RequestCallback: NSObject {
                     param.loader.stopAnimating()
                     param.loader.hidesWhenStopped = true
                 }
-              //  param.callback?.onError(error: response.result.error as! String, tag: param.tag)
                 param.callback!(false,response.result.error! as? String)
 
                 break
