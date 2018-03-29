@@ -200,7 +200,7 @@ var arrayData = [AnyObject]()
 arrayData.append(dictProfileImage as AnyObject)
 
 
-WebConnect.upload()
+WebConnect.uploadPut()
 .url(url: "put your url")
 .baseUrl(baseUrl: "put your base url")
 .bodyParam(bodyParam: params )

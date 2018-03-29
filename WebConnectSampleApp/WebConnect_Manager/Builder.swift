@@ -347,9 +347,10 @@ class Builder: NSObject {
         }
         
         /**
-         dictImage["dataKey"] -> key provided by API parameter
-         dictImage["mimeType"] -> Here will add mimeType for selected data eg (image/jpg , image/png, application/pdf and so on)
-         dictImage["fileName"] -> Name of data file eg (xyz)
+         dictImage[MultipartKeys.Data.rawValue] -> data which you want to upload
+         dictImage[MultipartKeys.Keys.rawValue] -> key provided by API parameter
+         dictImage[MultipartKeys.MimeType.rawValue] -> Here will add mimeType for selected data eg (image/jpg , image/png, application/pdf and so on)
+         dictImage[MultipartKeys.FileName.rawValue] -> Name of data file eg (xyz)
          **/
         func dataParams(dataParams:[AnyObject]) -> Self {
             param.dataParams = dataParams
@@ -388,6 +389,15 @@ class Builder: NSObject {
                 param.loader.startAnimating()
             }
             
+            var method =  HTTPMethod.post
+            
+            if param.type == "POST" {
+                method = HTTPMethod.post
+            }
+            else {
+                method = HTTPMethod.put
+            }
+            
             ////upload
             Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = TimeInterval(connectTimeout)
             
@@ -402,11 +412,11 @@ class Builder: NSObject {
                         
                         let uploadDict = dict as! [String:AnyObject]
                         
-                        MultipartFormData.append((uploadDict[MultipartKeys.Data.rawValue] as? Data)!, withName: uploadDict[MultipartKeys.keys.rawValue] as! String, fileName: uploadDict[MultipartKeys.fileName.rawValue] as! String, mimeType: uploadDict[MultipartKeys.mimeType.rawValue] as! String)
+                        MultipartFormData.append((uploadDict[MultipartKeys.Data.rawValue] as? Data)!, withName: uploadDict[MultipartKeys.Keys.rawValue] as! String, fileName: uploadDict[MultipartKeys.FileName.rawValue] as! String, mimeType: uploadDict[MultipartKeys.MimeType.rawValue] as! String)
 
                     }
                     
-            }, to: baseUrl + self.param.url,method: .put, headers : param.header) {
+            }, to: baseUrl + self.param.url,method: method, headers : param.header) {
                 (result) in
                 
                 switch result {

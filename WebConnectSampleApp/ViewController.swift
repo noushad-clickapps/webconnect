@@ -132,17 +132,17 @@ class ViewController: UIViewController {
         
         var dictProfileImage = [String:AnyObject]()
 
-        dictProfileImage["data"] = UIImageJPEGRepresentation(img!, 0.5) as AnyObject?
-        dictProfileImage["mimeType"] = "image/jpg" as AnyObject?
-        dictProfileImage["fileName"] = "avatar_profile.jpg" as AnyObject?
-        dictProfileImage["keys"] = "image" as AnyObject
+        dictProfileImage[MultipartKeys.Data.rawValue] = UIImageJPEGRepresentation(img!, 0.5) as AnyObject?
+        dictProfileImage[MultipartKeys.FileName.rawValue] = "image/jpg" as AnyObject?
+        dictProfileImage[MultipartKeys.MimeType.rawValue] = "avatar_profile.jpg" as AnyObject?
+        dictProfileImage[MultipartKeys.Keys.rawValue] = "image" as AnyObject 
         
         var arrayData = [AnyObject]()
         
         arrayData.append(dictProfileImage as AnyObject)
 
         
-        WebConnect.upload()
+        WebConnect.uploadPost()
             .url(url: "provider_profile?")
             .baseUrl(baseUrl: "http://api.laan.dev.clicksandbox.com:8080/v1/")
             .bodyParam(bodyParam: params )
