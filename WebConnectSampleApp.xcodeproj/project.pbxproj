@@ -16,6 +16,7 @@
 		4B56A7481FFBB98100EA3016 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56A7471FFBB98100EA3016 /* Builder.swift */; };
 		4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C0E701FFE5489004D95D0 /* Model.swift */; };
 		4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88D26A1FFCFC8B006AA79A /* WebParam.swift */; };
+		4BBFB908202869EA00C8B297 /* NavigationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBFB907202869EA00C8B297 /* NavigationPopup.swift */; };
 		4BE6BCC32005E444001B68EC /* RequestCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6BCC22005E444001B68EC /* RequestCallback.swift */; };
 		4BEF14171FFF422A0023E1A2 /* WebConnectConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */; };
 		7FBB9883427206D4A846A942 /* Pods_WebConnectSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */; };
@@ -34,6 +35,8 @@
 		4B5C0E701FFE5489004D95D0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4B5F07E92008738A0005C65B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
 		4B88D26A1FFCFC8B006AA79A /* WebParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebParam.swift; sourceTree = "<group>"; };
+		4BBFB906202867ED00C8B297 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		4BBFB907202869EA00C8B297 /* NavigationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPopup.swift; sourceTree = "<group>"; };
 		4BE6BCC22005E444001B68EC /* RequestCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCallback.swift; sourceTree = "<group>"; };
 		4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnectConfiguration.swift; sourceTree = "<group>"; };
 		94670C1FBD9FA494F7227782 /* Pods_WebConnectSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebConnectSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +85,7 @@
 		4B56A7311FFBB62500EA3016 /* WebConnectSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BBFB905202867ED00C8B297 /* NotificationView */,
 				4B5F07E92008738A0005C65B /* README.md */,
 				4B56A7441FFBB74E00EA3016 /* WebConnect_Manager */,
 				4B56A7321FFBB62500EA3016 /* AppDelegate.swift */,
@@ -103,8 +107,17 @@
 				4B88D26A1FFCFC8B006AA79A /* WebParam.swift */,
 				4BEF14161FFF422A0023E1A2 /* WebConnectConfiguration.swift */,
 				4BE6BCC22005E444001B68EC /* RequestCallback.swift */,
+				4BBFB907202869EA00C8B297 /* NavigationPopup.swift */,
 			);
 			path = WebConnect_Manager;
+			sourceTree = "<group>";
+		};
+		4BBFB905202867ED00C8B297 /* NotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				4BBFB906202867ED00C8B297 /* NotificationView.swift */,
+			);
+			path = NotificationView;
 			sourceTree = "<group>";
 		};
 		CE9412796093FC31D39BC6E3 /* Pods */ = {
@@ -241,6 +254,7 @@
 			files = (
 				4BE6BCC32005E444001B68EC /* RequestCallback.swift in Sources */,
 				4BEF14171FFF422A0023E1A2 /* WebConnectConfiguration.swift in Sources */,
+				4BBFB908202869EA00C8B297 /* NavigationPopup.swift in Sources */,
 				4B5C0E711FFE5489004D95D0 /* Model.swift in Sources */,
 				4B88D26B1FFCFC8B006AA79A /* WebParam.swift in Sources */,
 				4B56A7351FFBB62500EA3016 /* ViewController.swift in Sources */,

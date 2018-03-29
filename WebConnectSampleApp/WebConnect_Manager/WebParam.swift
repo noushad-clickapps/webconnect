@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum MultipartKeys: String {
+   case Data =  "data"
+   case keys = "keys"
+   case fileName = "fileName"
+   case mimeType = "mimeType"
+}
+
 class WebParam: NSObject {
     
     var url : String = ""
@@ -25,7 +32,7 @@ class WebParam: NSObject {
     var progress: ((_ progress:Double) -> Void)?
    // var uploadMultipartCallBack: ((Bool,_ response:Any)-> Void)?
     var uploadprogress: ((_ progress:Double) -> Void)?
-    var dataParams = Dictionary<String,Data>()
+    var dataParams = [AnyObject]()
     
     
     

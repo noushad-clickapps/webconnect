@@ -78,7 +78,7 @@ class ViewController: UIViewController {
            
         }
         .loader(loader: loaderIndicator)
-        .connect()
+       // .connect()
         
         
         WebConnect.download(fileName:"bigImage.png")
@@ -108,29 +108,46 @@ class ViewController: UIViewController {
             //.connect()
         
         var params = [String:String]()
-        params["region_id"] = "3"
-        params["work_location_id"] = "4"
-        params["occasion_id"] = "3"
-        params["date"] = "26/01/2018"
-        params["address"] = "Chandigarh"
-        params["phone_number"] = "0512365478"
+//        params["region_id"] = "3"
+//        params["work_location_id"] = "4"
+//        params["occasion_id"] = "3"
+//        params["date"] = "26/01/2018"
+//        params["address"] = "Chandigarh"
+//        params["phone_number"] = "0512365478"
+        
+        params["email"] = "provider@clickapps.co"
+        params["name"] = "Provider_Dev"
+        params["mobile"] = "7814759012"
+        
+        params["locale"] = "en"
         
         let img = UIImage(named:"IMG_6169")
         let data = UIImageJPEGRepresentation(img!, 0.5)
         
         var dataParams = [String:Data]()
-        dataParams["attachments_attributes[][attachment]\";filename=\"\("image1")"] =  data
+        dataParams["image"] =  data
         //"attachments_attributes[][attachment]\";filename=\"\(uploadDict["file_name"]!)"
         
+        let headers = ["Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywibmFtZSI6IlByb3ZpZGVyIiwiZW1haWwiOiJwcm92aWRlckBjbGlja2FwcHMuY28iLCJtb2JpbGUiOiIxMjM0NTY3IiwiaW1hZ2UiOiJkZWZhdWx0X2xvZ28uanBnIiwiYWNjZXNzIjoicHJvdmlkZXIiLCJpYXQiOjE1MjEwMjQ0MzgsImV4cCI6MTUyMzYxNjQzOH0.0iVFJfxD6B2J46zzvdsa_cZDuQu_0BnS6tgGMPVG_JI"]
         
-        let headers = ["Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDEsImZpcnN0X25hbWUiOiJhc2hhbmFrLXZwbiIsImxhc3RfbmFtZSI6Ii0iLCJmdWxsX25hbWUiOiJBc2hhbmFrIFZwbiIsImFkbWluIjp0cnVlLCJyb2xlIjoiYWRtaW4iLCJhdmF0YXIiOiJodHRwOi8vYXBpLmRldi5tb2guY2xpY2tzYW5kYm94MS5jb206ODA4MC9kZWZhdWx0X3Byb2ZpbGUuanBnIiwiYWNjZXNzIjoiYXBwIiwiaWF0IjoxNTE2ODU5MDI3LCJleHAiOjE1MTk0NTEwMjd9.8WDVMThvcaVCIdmOTFCmXMK6mTATem90xgVfH-ZPMRg"]
+        var dictProfileImage = [String:AnyObject]()
+
+        dictProfileImage["data"] = UIImageJPEGRepresentation(img!, 0.5) as AnyObject?
+        dictProfileImage["mimeType"] = "image/jpg" as AnyObject?
+        dictProfileImage["fileName"] = "avatar_profile.jpg" as AnyObject?
+        dictProfileImage["keys"] = "image" as AnyObject
+        
+        var arrayData = [AnyObject]()
+        
+        arrayData.append(dictProfileImage as AnyObject)
+
         
         WebConnect.upload()
-            .url(url: "ashanaks")
-            .baseUrl(baseUrl: "http://api.dev.moh.clicksandbox1.com:8080/v1/")
+            .url(url: "provider_profile?")
+            .baseUrl(baseUrl: "http://api.laan.dev.clicksandbox.com:8080/v1/")
             .bodyParam(bodyParam: params )
             .header(header: headers)
-            .dataParams(dataParams: dataParams)
+            .dataParams(dataParams: arrayData)
             .callback(callBack: { (status, response) in
                 
                 print("upload response", response)

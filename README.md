@@ -185,15 +185,27 @@ print("Download Progress percentage = \(Int(progress * 100)) %")
 
 `loader(loader: loaderIndicator)` - Optional, if you want to show loader during hit Api's than you can set your loader.
 
+-------
 **HTTP UPLOAD MULTIPART**
 
 ```
+var dictProfileImage = [String:AnyObject]()
+
+dictProfileImage["data"] = UIImageJPEGRepresentation(img!, 0.5) as AnyObject?
+dictProfileImage["mimeType"] = "image/jpg" as AnyObject?
+dictProfileImage["fileName"] = "avatar_profile.jpg" as AnyObject?
+dictProfileImage["keys"] = "image" as AnyObject
+
+var arrayData = [AnyObject]()
+arrayData.append(dictProfileImage as AnyObject)
+
+
 WebConnect.upload()
 .url(url: "put your url")
-.baseUrl(baseUrl: "http://api.dev")
+.baseUrl(baseUrl: "put your base url")
 .bodyParam(bodyParam: params )
 .header(header: headers)
-.dataParams(dataParams: dataParams)
+.dataParams(dataParams: arrayData)
 .callback(callBack: { (status, response) in
 
 print("upload response", response)
@@ -204,6 +216,9 @@ print("Download Progress percentage = \(Int(progress * 100)) %")
 
 })
 .connect()
+}
+
+
 ```
 
 **Upcoming Features**
